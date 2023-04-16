@@ -1,5 +1,4 @@
 class CatsController < ApplicationController
-  before_action :authorized
   before_action :set_cat, only: %i[ show update destroy ]
 
   # GET /cats
