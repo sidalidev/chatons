@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
+  before_action :authorized
   before_action :set_cat, only: %i[ show update destroy ]
-  # skip_before_action :authorized, only: [:index, :show]
 
   # GET /cats
   def index
