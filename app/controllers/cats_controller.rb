@@ -1,6 +1,11 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: %i[ show update destroy ]
 
+  def search
+    @cats = Cat.where("name LIKE ?", "%#{params[:name]}%")
+    render json: @cats
+  end
+
   # GET /cats
   def index
     @cats = Cat.all
